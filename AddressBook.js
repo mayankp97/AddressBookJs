@@ -79,3 +79,6 @@ let state = 'Rajasthan';
 let contactsState = AddressBook.filter(c => c.state = state);
 console.log('Count by city : ', contacts.length);
 console.log('Count by State : ',contactsState.length);
+
+//UC11 : Sorty By name
+AddressBook.sort((c1,c2) => c1.firstName == c2.firstName);
