@@ -51,3 +51,10 @@ let nameToDelete = 'Mukesh';
 let index = AddressBook.findIndex(c => c.firstName == nameToDelete);
 AddressBook.splice(index,1);
 console.log(AddressBook);
+
+//UC6 : Number Of Contacts
+let count = 0;
+AddressBook.push(contact1);
+AddressBook.push(contact2);
+let num = AddressBook.reduce((count) => count+1,0);
+console.log('Number of Contacts : ',num);
