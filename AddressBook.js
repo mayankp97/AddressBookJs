@@ -30,14 +30,19 @@ function Contact(fName,lName,address,city,state,zip,phone,email){
     validate.validateAll(this);
 }
 
-let contact1 = new Contact('Mayank', 'Purohit','Street A','NYEZ','NYSD','548787','98 9989898989','m@gmail.com');
-let contact2 = new Contact('Mukesh','Kumar','Street B','Jodh','Rajasthan','342301','91 9798979897','mukesh@gmail.com');
+let contact1 = new Contact('Mayank', 'Purohit','Street A','ANYEZ','ANYSD','548787','98 9989898989','m@gmail.com');
+let contact2 = new Contact('Mukesh','Kumar','Street B','BJodh','BRajasthan','342301','91 9798979897','mukesh@gmail.com');
+let contact3 = new Contact('AMukesh','Kumar','Street B','Jodh','Rajasthan','442301','91 9798979897','mukesh@gmail.com');
+let contact4 = new Contact('Zori','Kumar','Street B','ZJodh','ARajasthan','942301','91 9798979897','mukesh@gmail.com');
+
 console.log(contact1);
 
 
 //UC 3 : Address Book Array 
 let AddressBook = [contact1];
+AddressBook.push(contact3);
 AddressBook.push(contact2);
+AddressBook.push(contact4);
 console.log(AddressBook);
 
 //UC4 : find contact 
@@ -76,9 +81,18 @@ console.log(contacts);
 
 //UC 10 : Count By City
 let state = 'Rajasthan';
-let contactsState = AddressBook.filter(c => c.state = state);
+let contactsState = AddressBook.filter(c => c.state == state);
 console.log('Count by city : ', contacts.length);
 console.log('Count by State : ',contactsState.length);
 
-//UC11 : Sorty By name
-AddressBook.sort((c1,c2) => c1.firstName == c2.firstName);
+//UC11 : Sort By name
+AddressBook.sort((c1,c2) => c1.firstName < c2.firstName ? -1 : c1.firstName > c2.firstName ? 1 : 0);
+console.log('Sort By First Name : ',AddressBook);
+
+//UC12 : Sort By City, State and Zip
+let sortByCity = addressBook => addressBook.sort((c1,c2) => c1.city < c2.city ? -1 : c1.city > c2.city ? 1 : 0);
+let sortByState = addressBook => addressBook.sort((c1,c2) => c1.state < c2.state ? -1 : c1.state > c2.state ? 1 : 0);
+let sortByZip = addressBook => addressBook.sort((c1,c2) => c1.zip < c2.zip ? -1 : c1.zip > c2.zip ? 1 : 0);
+console.log('Sort By city : ',sortByCity(AddressBook));
+console.log('Sort By State : ',sortByState(AddressBook));
+console.log('Sort By Zip ',sortByZip(AddressBook));
