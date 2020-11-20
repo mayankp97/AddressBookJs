@@ -43,4 +43,11 @@ console.log(AddressBook);
 //UC4 : find contact 
 let nameToFind = 'Mukesh';
 let contact = AddressBook.find(c => c.firstName==nameToFind);
+contact.lastName = 'Kumrari';
 console.log(contact);
+
+//UC5 : delete Contact
+let nameToDelete = 'Mukesh';
+let index = AddressBook.findIndex(c => c.firstName == nameToDelete);
+AddressBook.splice(index,1);
+console.log(AddressBook);
