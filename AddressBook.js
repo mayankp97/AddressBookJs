@@ -73,3 +73,9 @@ console.log(person);
 let cityToView = 'Jodh';
 let contacts = AddressBook.filter(c => c.city==cityToView);
 console.log(contacts);
+
+//UC 10 : Count By City
+let state = 'Rajasthan';
+let contactsState = AddressBook.filter(c => c.state = state);
+console.log('Count by city : ', contacts.length);
+console.log('Count by State : ',contactsState.length);
