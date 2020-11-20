@@ -60,7 +60,11 @@ let num = AddressBook.reduce((count) => count+1,0);
 console.log('Number of Contacts : ',num);
 
 //UC7 : Check Duplicates
-function checkDuplicate(contact){
-    return AddressBook.filter(c => c.firstName==contact.firstName).length != 0;
-}
+let checkDuplicate = contact => AddressBook.filter(c => c.firstName==contact.firstName).length != 0;
 console.log(checkDuplicate(contact1));
+
+//UC8 : Search By city
+let city = 'Jodh';
+let nameToSearch = 'Mukesh';
+let person = AddressBook.filter(c => c.city==city).find(c => c.firstName == nameToSearch);
+console.log(person);
