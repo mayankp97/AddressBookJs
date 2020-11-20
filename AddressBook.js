@@ -68,3 +68,8 @@ let city = 'Jodh';
 let nameToSearch = 'Mukesh';
 let person = AddressBook.filter(c => c.city==city).find(c => c.firstName == nameToSearch);
 console.log(person);
+
+//UC9 : View By City
+let cityToView = 'Jodh';
+let contacts = AddressBook.filter(c => c.city==cityToView);
+console.log(contacts);
