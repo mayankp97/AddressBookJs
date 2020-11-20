@@ -2,7 +2,7 @@
 
 //UC 2 : Validate
 let validate = {
-    fullName : fName => new RegExp('^[A-Z][A-Za-z]{2,}$').test(fName),
+    firstName : fName => new RegExp('^[A-Z][A-Za-z]{2,}$').test(fName),
     lastName : lName => new RegExp('^[A-Z][A-Za-z]{2,}$').test(lName),
     city : city => new RegExp('^[A-Za-z]{4,}$').test(city),
     state : state => new RegExp('^[A-Za-z]{4,}$').test(state),
@@ -19,7 +19,7 @@ let validate = {
 //UC1 : Create Contact
 
 function Contact(fName,lName,address,city,state,zip,phone,email){
-    this.fullName = fName;
+    this.firstName = fName;
     this.lastName = lName;
     this.address = address;
     this.city = city;
@@ -39,3 +39,8 @@ console.log(contact1);
 let AddressBook = [contact1];
 AddressBook.push(contact2);
 console.log(AddressBook);
+
+//UC4 : find contact 
+let nameToFind = 'Mukesh';
+let contact = AddressBook.find(c => c.firstName==nameToFind);
+console.log(contact);
