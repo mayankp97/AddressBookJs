@@ -58,3 +58,9 @@ AddressBook.push(contact1);
 AddressBook.push(contact2);
 let num = AddressBook.reduce((count) => count+1,0);
 console.log('Number of Contacts : ',num);
+
+//UC7 : Check Duplicates
+function checkDuplicate(contact){
+    return AddressBook.filter(c => c.firstName==contact.firstName).length != 0;
+}
+console.log(checkDuplicate(contact1));
