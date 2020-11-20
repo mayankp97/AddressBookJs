@@ -1,22 +1,5 @@
 //Welcome to address book program
 
-//UC1 : Create Contact
-
-function Contact(fName,lName,address,city,state,zip,phone,email){
-    this.fullName = fName;
-    this.lastName = lName;
-    this.address = address;
-    this.city = city;
-    this.state = state;
-    this.zip  = zip;
-    this.phone = phone;
-    this.email = email;
-}
-
-let contact = new Contact('Mayank', 'Purohit','Street A','NYEZ','NYSD','548787','98 9989898989','m@gmail.com');
-
-console.log(contact);
-
 //UC 2 : Validate
 let validate = {
     fullName : fName => new RegExp('^[A-Z][A-Za-z]{2,}$').test(fName),
@@ -33,4 +16,26 @@ let validate = {
     }
     };
 
-validate.validateAll(contact);
+//UC1 : Create Contact
+
+function Contact(fName,lName,address,city,state,zip,phone,email){
+    this.fullName = fName;
+    this.lastName = lName;
+    this.address = address;
+    this.city = city;
+    this.state = state;
+    this.zip  = zip;
+    this.phone = phone;
+    this.email = email;
+    validate.validateAll(this);
+}
+
+let contact1 = new Contact('Mayank', 'Purohit','Street A','NYEZ','NYSD','548787','98 9989898989','m@gmail.com');
+let contact2 = new Contact('Mukesh','Kumar','Street B','Jodh','Rajasthan','342301','91 9798979897','mukesh@gmail.com');
+console.log(contact1);
+
+
+//UC 3 : Address Book Array 
+let AddressBook = [contact1];
+AddressBook.push(contact2);
+console.log(AddressBook);
